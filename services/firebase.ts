@@ -27,13 +27,13 @@ import { ADMIN_UIDS } from '../constants';
 // --- FIREBASE CONFIG ---
 // IMPORTANT: Replace with your project's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyB1CQw0SZoaRGkaSV3-gvd-JTogxbJcXK0",
-    authDomain: "showswap-f8db0.firebaseapp.com",
-    projectId: "showswap-f8db0",
-    storageBucket: "showswap-f8db0.appspot.com",
-    messagingSenderId: "1021717912523",
-    appId: "1:1021717912523:web:0db5ee6733cd898251b44e",
-    measurementId: "G-4NBQW12FYC"
+    apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+    authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+    projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+    storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+    messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+    appId: import.meta.env.VITE_FIREBASE_APP_ID,
+    measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID
 };
 
 // Initialize Firebase
