@@ -6,6 +6,7 @@ import { ADMIN_UIDS } from '../constants';
 interface AuthContextType {
     currentUser: User | null;
     loading: boolean;
+    error: string | null;
     login: () => Promise<void>;
     loginWithAdminCredentials: (username: string, password: string) => Promise<void>;
     logout: () => Promise<void>;
@@ -16,6 +17,7 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
     const [currentUser, setCurrentUser] = useState<User | null>(null);
     const [loading, setLoading] = useState(true);
+    const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
         // onAuthStateChanged now uses the real Firebase listener
@@ -28,12 +30,13 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
 
     const login = async () => {
         setLoading(true);
+        setError(null);
         try {
             await signInWithGoogle();
             // The onAuthStateChanged listener will handle setting the user
-        } catch (error) {
+        } catch (error: any) {
             console.error("Login failed:", error);
-            // Re-set loading to false on error, as onAuthStateChanged might not fire
+            setError(error?.message || 'Google Sign-In failed.');
             setLoading(false);
         }
     };
@@ -74,6 +77,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     const value = {
         currentUser,
         loading,
+        error,
         login,
         loginWithAdminCredentials,
         logout,

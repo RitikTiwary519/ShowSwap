@@ -4,6 +4,7 @@ import { db } from '../services/firebase';
 import TicketCard from '../components/TicketCard';
 import Spinner from '../components/Spinner';
 import TicketDetailModal from '../components/TicketDetailModal';
+import MyTicketCorner from '../components/MyTicketCorner';
 import { AnimatePresence, motion } from 'framer-motion';
 
 const HomePage: React.FC = () => {
@@ -45,7 +46,10 @@ const HomePage: React.FC = () => {
                 </h1>
                 <p className="text-center text-gray-400 mb-8 md:mb-12">Browse and exchange tickets for events worldwide.</p>
             </motion.div>
-           
+
+            {/* My Ticket Corner for logged-in users */}
+            <MyTicketCorner />
+
             {loading && <Spinner />}
             {error && <p className="text-center text-red-500">{error}</p>}
 

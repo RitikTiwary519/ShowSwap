@@ -64,7 +64,7 @@ const AdminPage: React.FC = () => {
                                     <tr key={ticket.id} className="hover:bg-dark-border/30">
                                         <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-white">{ticket.eventName}</td>
                                         <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-300">{ticket.sellerName} ({ticket.sellerContact})</td>
-                                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-300">${ticket.price}</td>
+                                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-300">₹{ticket.price}</td>
                                         <td className="px-6 py-4 whitespace-nowrap text-sm">
                                             {isExpired(ticket.eventDate) ? (
                                                 <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-gray-500 text-gray-100">Expired</span>

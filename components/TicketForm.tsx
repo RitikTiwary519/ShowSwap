@@ -131,7 +131,7 @@ const TicketForm: React.FC<TicketFormProps> = ({ onSuccess }) => {
             )}
 
             <div>
-                <label className="block text-sm font-medium text-gray-300">Price ($) *</label>
+                <label className="block text-sm font-medium text-gray-300">Price (₹) *</label>
                 <input type="number" name="price" min="0" step="0.01" onChange={handleChange} value={formData.price || ''} required className="mt-1 block w-full bg-dark-bg border border-dark-border rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-brand-purple focus:border-brand-purple" />
             </div>
             <div>

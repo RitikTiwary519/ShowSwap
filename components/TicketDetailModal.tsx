@@ -50,7 +50,7 @@ const TicketDetailModal: React.FC<TicketDetailModalProps> = ({ ticket, onClose }
 
                     <div className="mt-4 border-t border-dark-border pt-4 grid grid-cols-1 md:grid-cols-2 gap-x-6">
                         <DetailRow label="Event Date" value={eventDate} />
-                        <DetailRow label="Price" value={`$${ticket.price}`} />
+                        <DetailRow label="Price" value={`₹${ticket.price}`} />
                         <DetailRow label="Venue" value={ticket.venue} />
                         <DetailRow label="Artist/Performer" value={ticket.artist} />
                         <DetailRow label="Departure" value={ticket.departure} />
