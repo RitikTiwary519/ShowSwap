@@ -1,20 +1,62 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# 🎟️ ShowSwap
 
-# Run and deploy your AI Studio app
+**ShowSwap** is a modern web application where users can **buy and sell tickets** for events such as concerts, festivals, garba nights, flights, trains, and more.  
+Built with **Firebase** and a **modern dark-themed UI**, ShowSwap provides a seamless platform for secure ticket swapping.
 
-This contains everything you need to run your app locally.
+---
 
-View your app in AI Studio: https://ai.studio/apps/drive/1YohUqF0AmCxfFaJA0WbmlHzLplX-LeYu
+## 🚀 Features
 
-## Run Locally
+### 👤 User
+- Login via **Google Authentication**.  
+- View a feed of available tickets.  
+- Post new tickets for sale (only after authentication).  
+- See ticket details (event, seller info, price, etc.).  
+- Contact sellers directly.  
 
-**Prerequisites:**  Node.js
+### 🛠️ Admin
+- View all tickets posted by users.  
+- Remove inappropriate or fake tickets.  
 
+### 🎫 Ticket Feed
+- Displays key details:
+  - Event Name  
+  - Category (Concert, Festival, Train, Flight, etc.)  
+  - Seller Name  
+  - Seller Contact  
+  - Event Price  
+  - Event Date  
+- Clicking a ticket → opens a **detailed view** with full information.  
+- Expired tickets (past event date) are **automatically hidden** from the feed.  
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+### 📝 Ticket Posting
+- Dynamic ticket posting form with fields based on category:
+  - **Concert/Festival/Garba:** Artist, Venue, Date, Seat details, Price  
+  - **Train/Flight:** Departure, Arrival, Date, Seat/PNR/Flight Number, Price  
+  - **Other:** Custom description field  
+- Only authenticated users can post.  
+
+---
+
+## 🏗️ Tech Stack
+- **Frontend:** React, Tailwind CSS, Framer Motion  
+- **Backend & Database:** Firebase Firestore  
+- **Authentication:** Firebase (Google Sign-In)  
+- **Hosting:** Firebase Hosting  
+
+---
+
+## 🎨 UI/UX
+- Modern **dark theme** with neon-style highlights.  
+- Smooth animations and transitions.  
+- Responsive design (mobile + desktop).  
+- Ticket feed in clean grid/list format.  
+
+---
+
+## ⚙️ Installation & Setup
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/yourusername/showswap.git
+cd showswap
